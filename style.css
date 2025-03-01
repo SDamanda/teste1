@@ -49,6 +49,6 @@ bory{
     color: #000;
 }
 .button.wide{
-    grid-column: 2;
+    grid-column:span2;
     border-radius: 50px;
 }
