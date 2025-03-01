@@ -27,5 +27,5 @@ function calculate(){
 }
 function clearDisplay(){
     currentInput = "";
-    display.textContent = currentInput;
+    display.textContent = "0";
 }
