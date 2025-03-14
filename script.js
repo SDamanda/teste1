@@ -39,3 +39,5 @@ function clearDisplay() {
     currentInput = "";
     display.textContent = "0";
 }
+
+
