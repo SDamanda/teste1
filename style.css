@@ -3,45 +3,45 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: black; /* Fundo preto */
+    background-color: black; 
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif; /* Fonte do iPhone */
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .calculator {
     background-color: black;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Sombra mais forte */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); 
     text-align: center;
     width: 320px;
 }
 
 .display {
-    background-color: transparent; /* Fundo transparente */
-    color: white; /* Texto branco */
-    font-size: 4rem; /* Fonte maior */
+    background-color: transparent; 
+    color: white; 
+    font-size: 4rem; 
     padding: 20px;
     text-align: right;
     word-wrap: break-word;
-    border: none; /* Removendo borda */
+    border: none; 
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px; /* Espaçamento maior entre botões */
+    gap: 12px; 
     padding: 10px;
 }
 
 .button {
     border: none;
     border-radius: 50%;
-    width: 70px; /* Tamanho fixo para botões circulares */
+    width: 70px; 
     height: 70px;
     font-size: 2.5rem;
     cursor: pointer;
-    display: flex; /* Para centralizar o texto */
+    display: flex; 
     align-items: center;
     justify-content: center;
 }
