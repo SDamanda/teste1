@@ -3,62 +3,66 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: black;
+    background-color: black; /* Fundo preto */
     margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif; /* Fonte do iPhone */
 }
 
 .calculator {
     background-color: black;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Sombra mais forte */
     text-align: center;
     width: 320px;
 }
 
 .display {
-    background-color: #222;
-    color: #fff;
-    font-size: 2rem;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    min-height: 50px;
+    background-color: transparent; /* Fundo transparente */
+    color: white; /* Texto branco */
+    font-size: 4rem; /* Fonte maior */
+    padding: 20px;
     text-align: right;
     word-wrap: break-word;
+    border: none; /* Removendo borda */
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 12px; /* Espaçamento maior entre botões */
+    padding: 10px;
 }
 
 .button {
     border: none;
     border-radius: 50%;
-    padding: 20px;
-    font-size: 1.5rem;
+    width: 70px; /* Tamanho fixo para botões circulares */
+    height: 70px;
+    font-size: 2.5rem;
     cursor: pointer;
+    display: flex; /* Para centralizar o texto */
+    align-items: center;
+    justify-content: center;
 }
 
 .button.dark-gray {
     background-color: #333;
-    color: #fff;
+    color: white;
 }
 
-.button.orange {
-    background-color: #f39c12;
-    color: #fff;
+button.orange {
+    background-color: #ff9500;
+    color: white;
 }
 
 .button.light-gray {
-    background-color: #d3d3d3;
-    color: #000;
+    background-color: #a2a2a2;
+    color: black;
 }
 
 .button.wide {
     grid-column: span 2;
+    width: 160px;
     border-radius: 50px;
 }
-
