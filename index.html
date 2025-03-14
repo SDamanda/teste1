@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Code Start</title>
+    <title>Calculadora iPhone</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="calculator">
         <div class="display" id="display">0</div>
         <div class="buttons">
-            <button type="button" class="button light-gray" onclick="clearDisplay()">C</button>
+            <button type="button" class="button light-gray" onclick="clearDisplay()">AC</button>
+            <button type="button" class="button light-gray" onclick="appendOperator('+/-')">+/-</button>
             <button type="button" class="button light-gray" onclick="appendOperator('%')">%</button>
-            <button type="button" class="button light-gray" onclick="appendOperator('.')">.</button>
-            <button type="button" class="button orange" onclick="appendOperator('/')">/</button>
+            <button type="button" class="button orange" onclick="appendOperator('/')">÷</button>
             <button type="button" class="button dark-gray" onclick="appendNumber('7')">7</button>
             <button type="button" class="button dark-gray" onclick="appendNumber('8')">8</button>
             <button type="button" class="button dark-gray" onclick="appendNumber('9')">9</button>
-            <button type="button" class="button orange" onclick="appendOperator('*')">*</button>
+            <button type="button" class="button orange" onclick="appendOperator('*')">×</button>
             <button type="button" class="button dark-gray" onclick="appendNumber('4')">4</button>
             <button type="button" class="button dark-gray" onclick="appendNumber('5')">5</button>
             <button type="button" class="button dark-gray" onclick="appendNumber('6')">6</button>
@@ -27,9 +27,11 @@
             <button type="button" class="button dark-gray" onclick="appendNumber('3')">3</button>
             <button type="button" class="button orange" onclick="appendOperator('+')">+</button>
             <button type="button" class="button dark-gray wide" onclick="appendNumber('0')">0</button>
+            <button type="button" class="button dark-gray" onclick="appendOperator('.')">,</button>
             <button type="button" class="button orange" onclick="calculate()">=</button>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
