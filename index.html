@@ -1,37 +1,123 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora iPhone</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>calculator</title>
+    <style>
+    bory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: pink light;
+    margin: 0;
+}
+.calculator{
+    background-color: pink;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,1,0.5);
+    text-align: center;
+    width: 320px;
+}
+.display{
+    background-color: #DB7093
+    color: #FAF0E6;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-height: 50px;
+    text-align: right;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+.button{
+    border: none;
+    border-radius: 50%;
+    padding: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+} 
+.button.beige{
+    background-color: #FFE4E1;
+    color: #fff;
+}
+.button.dark pink{
+    background-color: #DB7093;
+    color: #DB7093;
+}
+.button.white{
+    background-color: #FFE4E1;
+    color: #000;
+}
+.button.wide{
+    grid-column: 2;
+    border-radius: 50px;
+}
+</style>
 </head>
 <body>
+    <script>
+    let display = document.getElementById("display");
+let currentInput="";
+let currentOperator="";
+
+
+function appendNumber(value){
+    currentInput += value;
+    display.textContent = currentInput;
+}
+function appendOperator(operator){
+    if (currentInput === "" && operator !== ".") return;
+    currentInput += operator;
+    display.textContent= currentInput;
+}
+function calculate(){
+    try{
+       let result=eval(currentInput);
+       if(!Number.isInteger(result)){
+        result= result.toFixed(2);
+       }
+       currentInput= result;
+       display.textContent = currentInput;
+    }catch(error){
+       display.textContent = "error";
+       currentInput = "";
+    }
+}
+function clearDisplay(){
+    currentInput = "";
+    display.textContent = "0";
+}
+</script>
     <div class="calculator">
         <div class="display" id="display">0</div>
         <div class="buttons">
-            <button type="button" class="button light-gray" onclick="clearDisplay()">AC</button>
-            <button type="button" class="button light-gray" onclick="appendOperator('+/-')">+/-</button>
-            <button type="button" class="button light-gray" onclick="appendOperator('%')">%</button>
-            <button type="button" class="button orange" onclick="appendOperator('/')">÷</button>
-            <button type="button" class="button dark-gray" onclick="appendNumber('7')">7</button>
-            <button type="button" class="button dark-gray" onclick="appendNumber('8')">8</button>
-            <button type="button" class="button dark-gray" onclick="appendNumber('9')">9</button>
-            <button type="button" class="button orange" onclick="appendOperator('*')">×</button>
-            <button type="button" class="button dark-gray" onclick="appendNumber('4')">4</button>
-            <button type="button" class="button dark-gray" onclick="appendNumber('5')">5</button>
-            <button type="button" class="button dark-gray" onclick="appendNumber('6')">6</button>
-            <button type="button" class="button orange" onclick="appendOperator('-')">-</button>
-            <button type="button" class="button dark-gray" onclick="appendNumber('1')">1</button>
-            <button type="button" class="button dark-gray" onclick="appendNumber('2')">2</button>
-            <button type="button" class="button dark-gray" onclick="appendNumber('3')">3</button>
-            <button type="button" class="button orange" onclick="appendOperator('+')">+</button>
-            <button type="button" class="button dark-gray wide" onclick="appendNumber('0')">0</button>
-            <button type="button" class="button dark-gray" onclick="appendOperator('.')">,</button>
-            <button type="button" class="button orange" onclick="calculate()">=</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+            <button class="button white" onclick="clearDisplay()">C</button>
+            <button class="button white" onclick="appendOperator('%')">%</button>
+            <button class="button white" onclick="appendOperator('.')">.</button>
+            <button class="button dark pink" onclick="appendOperator('/')">/</button>
+            <button class="button beige" onclick="appendNumber('7')">7</button>
+            <button class="button beige" onclick="appendNumber('8')">8</button>
+            <button class="button beige" onclick="appendNumber('9')">9</button>
+            <button class="button dark pink"onclick="appendOperator('*')">*</button>
+            <button class="button beige" onclick="appendNumber('4')">4</button>
+            <button class="button beige" onclick="appendNumber('5')">5</button>
+            <button class="button beige" onclick="appendNumber('6')">6</button>
+            <button class="button dark pink" onclick="appendOperator('-')">-</button>
+            <button class="button beige" onclick="appendNumber('1')">1</button>
+            <button class="button beige" onclick="appendNumber('2')">2</button>
+            <button class="button beige" onclick="appendNumber('3')">3</button>
+            <button class="button dark pink" onclick="appendOperator('+')">+</button>
+                <button class="button beige wide" onclick="appendNumber('0')">0</button>
+            <button class="button dark pink" onclick="calculate()">=</button>
+     </div>
+</div>
+ <script src="script.js"></script>
 </body>
 </html>
-
